@@ -5,8 +5,10 @@ import axios from 'axios';
 
 function App() {
   return (
-    <div className="App">
-      Etusivu
+    <div className="container">
+      <div className="col-12">
+        <h3>Etusivu</h3>
+      </div>
     </div>
   );
 }
