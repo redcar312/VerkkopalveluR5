@@ -1,7 +1,9 @@
 /* 
 Kätettäviä värejä:
-1. #1A1A1A
-
+1. #1A1A1A - tumman harmaa
+2. #E2D64F - keltainen
+3. #F1EBA7 - vaalean keltainen
+4. #AFA31D - tumman keltainen
 */
 
 body {
@@ -15,4 +17,13 @@ footer {
   width: 100%;
   height: 60px;
   border-top: 4px solid #1F1F1F;
+}
+
+h2 {
+  color: #F1EBA7;
+  text-align: center;
+}
+
+.infoTeksti {
+  text-align: center;
 }
