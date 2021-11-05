@@ -61,13 +61,13 @@ export default function NavBar () {
                 Tietoa meistä
               </Link>
             </div>
-            <form className="d-flex align-self-end">
-              <input className="form-control me-2" type="search" placeholder="Hae tuotetta nimellä" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Hae</button>
-            </form>
           </div>
         </div>
       </div>
+        <form className="d-flex">
+          <input className="form-control me-2" type="search" placeholder="Hae tuotetta nimellä" aria-label="Search" />
+          <button className="btn btn-outline-success" type="submit">Hae</button>
+        </form>
     </nav>
   );
 }
