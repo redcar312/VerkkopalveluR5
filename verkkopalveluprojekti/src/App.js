@@ -17,7 +17,7 @@ function App() {
           Tervetuloa verkkokauppa Verkkokaupan sivustolle, toivottavasti tykkäät meidän hyvistä tuotteista!
         </p>
         <h3>Alennustuotteita ja tarjouksia:</h3>
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleControls" className="carousel slide col-12" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
             <img src={image1} height="500px" width="500px" className="d-block w-100 img-responsive" alt="..." />
@@ -37,7 +37,7 @@ function App() {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
-    </div>
+      </div>
       </div>
     </div>
     <Footer />
