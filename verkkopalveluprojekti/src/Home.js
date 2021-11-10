@@ -12,6 +12,7 @@ export default function Home () {
           meidän hyvistä tuotteista!
         </p>
         <h3>Alennustuotteita ja tarjouksia:</h3>
+        <div className="col-12">
         <div
           id='carouselExampleControls'
           className='carousel slide col-12'
@@ -71,6 +72,7 @@ export default function Home () {
             <span className='visually-hidden'>Next</span>
           </button>
         </div>
+      </div>
       </div>
     </div>
   )
