@@ -57,7 +57,7 @@ export default function NavBar() {
               </ul>
             </div>
             <div>
-              <Link className='nav-link' to='/'>
+              <Link className='nav-link' to='/aboutus'>
                 Tietoa meistä
               </Link>
             </div>
