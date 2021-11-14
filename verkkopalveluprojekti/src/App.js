@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {useState,useEffect} from "react";
 import NavBar from './inc/NavBar';
 import Footer from './inc/Footer';
 import Home from './Home';
 import AboutUs from './AboutUs';
-import axios from 'axios';
 import React from 'react';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
@@ -16,8 +16,8 @@ function App() {
   let location = useLocation();
 
   useEffect(()=> {
-    if (location.state !==undefined) {
-      setCategory({id: location.state.id,name:location.state.name});
+    if (location.state !== undefined) {
+      setCategory({id: location.state.id, name:location.state.name});
     }
   },[location.state])
 

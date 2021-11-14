@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import image1 from './img/black.png'
+import './App.css'
 
 export default function Home({ url, category }) {
   const [products, setProducts] = useState([]);
@@ -31,20 +32,19 @@ export default function Home({ url, category }) {
           Tervetuloa verkkokauppa Verkkokaupan sivustolle, toivottavasti tykkäät
           meidän hyvistä tuotteista!
         </p>
-        <div>
-          <h3>Alennustuotteita ja tarjouksia:</h3>
           <div>
             <h3>Tuotteita ryhmästä {category?.name}</h3>
             {products.map(product => (
-              <div key={product.id}>
+              <div key={product.id} className="products">
                 <p>{product.name}</p>
+                <p>{product.price}€</p>
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        <h3>Alennustuotteita ja tarjouksia:</h3>
         <div className="col-12">
           <div
             id='carouselExampleControls'

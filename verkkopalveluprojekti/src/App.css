@@ -28,3 +28,8 @@ h2 {
 .infoTeksti {
   text-align: center;
 }
+
+.products {
+  display: inline-block;
+  margin-right: 2rem;
+}
