@@ -1,7 +1,25 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
-export default function NavBar() {
+export default function NavBar({url,cart,setCategory}) {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    axios.get(url + 'products/categories.php')
+      .then((response)=> {
+        const json = response.data;
+        setCategories(json);
+      }).catch(error => {
+        if (error.response === undefined) {
+          alert(error);
+            } else {
+              alert(error.response.data.error);
+            }
+      })
+  }, [])
+
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
       <div className='container-fluid'>
@@ -39,21 +57,21 @@ export default function NavBar() {
                 className='dropdown-menu'
                 aria-labelledby='navbarDropdownMenuLink'
               >
-                <li>
-                  <Link className='dropdown-item' to='/'>
-                    Tuoteryhmä 1
+              {categories.map(category => (
+                <li key={category.id}>
+                  <Link
+                  className="dropdown-item"
+                  to={{
+                    pathname: '/',
+                    state: {
+                      ida: category.id,
+                      name: category.name
+                    }
+                  }}
+                  >{category.name}
                   </Link>
-                </li>
-                <li>
-                  <Link className='dropdown-item' to='/'>
-                    Tuoteryhmä 2
-                  </Link>
-                </li>
-                <li>
-                  <Link className='dropdown-item' to='/'>
-                    Tuoteryhmä 3
-                  </Link>
-                </li>
+                  </li>
+              ))}
               </ul>
             </div>
             <div>

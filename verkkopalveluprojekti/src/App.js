@@ -5,10 +5,12 @@ import Footer from './inc/Footer';
 import Home from './Home';
 import AboutUs from './AboutUs';
 
+const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
+
 function App() {
   return (
     <>
-    <NavBar />
+    <NavBar url={URL} />
     <div className="container-fluid">
       <Routes>
         <Route path="/" element={<Home/>} exact />
