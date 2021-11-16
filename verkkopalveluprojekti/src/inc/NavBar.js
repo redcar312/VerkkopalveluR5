@@ -44,16 +44,11 @@ export default function NavBar({url,cart,setCategory}) {
               Etusivu
             </Link>
             <div className='nav-item dropdown'>
-              <Link
-                className='nav-link dropdown-toggle'
-                to='/'
-                id='navbarDropdownMenuLink'
-                role='button'
-                data-bs-toggle='dropdown'
-                aria-expanded='false'
+              <a
+                class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
               >
                 Tuotteet
-              </Link>
+              </a>
               <ul
                 className='dropdown-menu'
                 aria-labelledby='navbarDropdownMenuLink'
@@ -65,7 +60,7 @@ export default function NavBar({url,cart,setCategory}) {
                   to={{
                     pathname: '/',
                     state: {
-                      ida: category.id,
+                      id: category.id,
                       name: category.name
                     }
                   }}

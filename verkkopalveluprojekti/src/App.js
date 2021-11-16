@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {useState,useEffect} from "react";
 import NavBar from './inc/NavBar';
@@ -25,10 +25,16 @@ function App() {
     <>
     <NavBar url={URL} setCategory={setCategory} />
     <div id="content" className="container-fluid">
-      <Routes>
-        <Route path="/" element={<Home url={URL} category={category} />} exact />
-        <Route path="/aboutus" element={<AboutUs/>} />
-      </Routes>
+      <Switch>
+        <Route path="/" render={() =>
+          <Home 
+            url = {URL}
+            category = {category}
+          />}
+          exact
+        />
+        <Route path="/aboutus" component={AboutUs} />
+      </Switch>
     </div>
     <Footer />
     </>
