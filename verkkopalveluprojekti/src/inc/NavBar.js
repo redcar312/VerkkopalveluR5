@@ -45,7 +45,7 @@ export default function NavBar({url,cart,setCategory}) {
             </Link>
             <div className='nav-item dropdown'>
               <a
-                class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
               >
                 Tuotteet
               </a>
