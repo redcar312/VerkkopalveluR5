@@ -80,7 +80,7 @@ export default function NavBar({url,cart,setCategory}) {
               <button className="btn btn-outline-secondary" type="submit">Hae</button>
             </form>
             <div>
-              <Link className='nav-link' to='/'>
+              <Link className='nav-link' to='/login'>
                 Kirjaudu sisään
               </Link>
             </div>

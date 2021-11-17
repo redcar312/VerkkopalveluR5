@@ -6,6 +6,7 @@ import NavBar from './inc/NavBar';
 import Footer from './inc/Footer';
 import Home from './Home';
 import AboutUs from './AboutUs';
+import LogIn from './LogIn';
 import React from 'react';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
@@ -34,6 +35,7 @@ function App() {
           exact
         />
         <Route path="/aboutus" component={AboutUs} />
+        <Route path="/login" component={LogIn} />
       </Switch>
     </div>
     <Footer />
