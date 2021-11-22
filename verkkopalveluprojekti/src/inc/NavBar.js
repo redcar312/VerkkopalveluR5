@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import Cart from '../Cart'
+
 
 export default function NavBar({url,cart,setCategory}) {
   const [categories, setCategories] = useState([])
@@ -84,6 +86,11 @@ export default function NavBar({url,cart,setCategory}) {
                 Kirjaudu sisään
               </Link>
             </div>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Cart cart={cart} />
+              </li>
+            </ul>
           </div>
         </div>
 

@@ -3,7 +3,7 @@ import axios from 'axios'
 import image1 from './img/black.png'
 import './App.css'
 
-export default function Home({ url, category }) {
+export default function Home({ url, category,addToCart }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -41,6 +41,7 @@ export default function Home({ url, category }) {
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
                 </div>
+                <button className="btn btn-warning" type="button" onClick={e => addToCart(product)}>Lisää</button>
               </div>
             ))}
           </div>

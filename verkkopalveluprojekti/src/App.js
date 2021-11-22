@@ -13,14 +13,27 @@ const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
   const [category, setCategory] = useState(null);
+  const [cart, setCart] = useState([])
 
   let location = useLocation();
+
+  useEffect(()=> {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  }, [])
 
   useEffect(()=> {
     if (location.state !== undefined) {
       setCategory({id: location.state.id, name:location.state.name});
     }
   },[location.state])
+
+  function addToCart(product) {
+    const newCart = [...cart,product];
+    setCart(newCart);
+    localStorage.setItem('cart',JSON.stringify(newCart));
+  }
 
   return (
     <>
@@ -31,6 +44,7 @@ function App() {
           <Home 
             url = {URL}
             category = {category}
+            addToCart={addToCart}
           />}
           exact
         />
