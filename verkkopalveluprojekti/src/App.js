@@ -8,6 +8,7 @@ import Home from './Home';
 import AboutUs from './AboutUs';
 import LogIn from './LogIn';
 import React from 'react';
+import Product from './Product';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
@@ -15,6 +16,7 @@ function App() {
   const [category, setCategory] = useState(null);
   const [cart, setCart] = useState([])
 
+  const [product, setProduct] = useState(null);
   let location = useLocation();
 
   useEffect(()=> {
@@ -25,8 +27,12 @@ function App() {
 
   useEffect(()=> {
     if (location.state !== undefined) {
+      if (location.pathname==="/") {
       setCategory({id: location.state.id, name:location.state.name});
+    } else if (location.pathname ==="/product") {
+      setProduct({id: location.state.id, name:location.state.name});
     }
+  }
   },[location.state])
 
   function addToCart(product) {
@@ -50,6 +56,13 @@ function App() {
         />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
+        <Route path="/product" render={() =>
+            <Product
+              url={URL}
+              product={product}
+            />
+          }
+        />
       </Switch>
     </div>
     <Footer />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import image1 from './img/black.png'
 import './App.css'
 
@@ -36,7 +37,19 @@ export default function Home({ url, category,addToCart }) {
             <h3>Tuotteita ryhmästä {category?.name}</h3>
             {products.map(product => (
               <div key={product.id} className="products">
-                <p>{product.name}</p>
+
+                <Link
+                  to={{
+                  pathname: '/product',
+                  state: {
+                  id: product.id,
+                  name: product.name
+                  }
+                  }}
+                >
+                {product.name}
+                </Link>
+
                 <p>{product.price}€</p>
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
