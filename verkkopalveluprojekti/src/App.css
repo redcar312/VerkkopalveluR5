@@ -10,6 +10,7 @@ body {
   background-color: #1A1A1A;
   color: snow;
   margin-bottom: 5rem;
+  font-family: sans-serif;
 }
 
 footer {
@@ -33,4 +34,8 @@ h2 {
 .products {
   display: inline-block;
   margin-right: 2rem;
+}
+
+.addbutton {
+  margin-top: 0.5rem;
 }

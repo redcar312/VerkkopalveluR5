@@ -38,12 +38,12 @@ export default function Home({ url, category,addToCart }) {
             {products.map(product => (
               <div key={product.id} className="products">
 
-                <Link
+                <Link className="productLink"
                   to={{
                   pathname: '/product',
                   state: {
                   id: product.id,
-                  name: product.name
+                  name: product.name,
                   }
                   }}
                 >
@@ -54,7 +54,7 @@ export default function Home({ url, category,addToCart }) {
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
                 </div>
-                <button className="btn btn-warning" type="button" onClick={e => addToCart(product)}>Lisää</button>
+                <button className="btn btn-warning addbutton" type="button" onClick={e => addToCart(product)}>Lisää</button>
               </div>
             ))}
           </div>
