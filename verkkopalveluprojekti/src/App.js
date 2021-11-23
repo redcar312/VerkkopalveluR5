@@ -9,6 +9,7 @@ import AboutUs from './AboutUs';
 import LogIn from './LogIn';
 import React from 'react';
 import Product from './Product';
+import Order from './Order';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
@@ -41,9 +42,15 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(newCart));
   }
 
+  function removeFromCart(product) {
+    const itemsNotRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsNotRemoved);
+    localStorage.setItem('cart',JSON.stringify(itemsNotRemoved));
+  }
+
   return (
     <>
-    <NavBar url={URL} setCategory={setCategory} />
+    <NavBar url={URL} setCategory={setCategory} cart={cart} />
     <div id="content" className="container-fluid">
       <Switch>
         <Route path="/" render={() =>
@@ -54,6 +61,13 @@ function App() {
           />}
           exact
         />
+        <Route path="/order" render={() =>
+            <Order 
+              url={URL}
+              cart={cart}     
+              removeFromCart = {removeFromCart}
+            />
+        } />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
         <Route path="/product" render={() =>
