@@ -52,6 +52,7 @@ function App() {
   function updateAmount(amount, product) {
     product.amount = amount;
     const index = cart.findIndex((item) => item.id === product.id);
+    const modifiedCart = Object.assign([...cart], {[index]:product});
   }
 
   return (

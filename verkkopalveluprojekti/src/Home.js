@@ -53,7 +53,15 @@ export default function Home({ url, category,addToCart }) {
                 </Link>
 
                 <p>{product.price}€</p>
-                <Link to="/product">
+                <Link to={{
+                  pathname: '/product',
+                  state: {
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image
+                  }
+                }}>
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
                 </div>
