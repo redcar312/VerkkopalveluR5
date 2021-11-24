@@ -37,6 +37,7 @@ function App() {
   },[location.state])
 
   function addToCart(product) {
+    product["amount"] = 1;
     const newCart = [...cart,product];
     setCart(newCart);
     localStorage.setItem('cart',JSON.stringify(newCart));
@@ -46,6 +47,11 @@ function App() {
     const itemsNotRemoved = cart.filter(item => item.id !== product.id);
     setCart(itemsNotRemoved);
     localStorage.setItem('cart',JSON.stringify(itemsNotRemoved));
+  }
+
+  function updateAmount(amount, product) {
+    product.amount = amount;
+    const index = cart.findIndex((item) => item.id === product.id);
   }
 
   return (
