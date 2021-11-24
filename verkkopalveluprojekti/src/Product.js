@@ -7,7 +7,7 @@ export default function Product({ product, url, addToCart }) {
         <div className="container">
             <div className="col-12">
                 <h2>{product?.name}</h2>
-                <div class="kuva">
+                <div className="kuva">
                     <img src={url + 'img/' + product?.image} alt="" />
                 </div>
                 <p className='infoTeksti'>{product?.price}€</p>
