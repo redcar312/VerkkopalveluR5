@@ -44,6 +44,7 @@ export default function Home({ url, category,addToCart }) {
                   state: {
                   id: product.id,
                   name: product.name,
+                  price: product.price
                   }
                   }}
                 >
