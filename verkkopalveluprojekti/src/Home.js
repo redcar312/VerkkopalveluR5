@@ -53,9 +53,11 @@ export default function Home({ url, category,addToCart }) {
                 </Link>
 
                 <p>{product.price}€</p>
+                <Link to="/product">
                 <div>
                   <img src={url + 'img/' + product.image} alt="" />
                 </div>
+                </Link>
                 <button className="btn btn-warning addbutton" type="button" onClick={e => addToCart(product)}>Lisää</button>
               </div>
             ))}
