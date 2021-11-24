@@ -29,9 +29,9 @@ function App() {
   useEffect(()=> {
     if (location.state !== undefined) {
       if (location.pathname==="/") {
-      setCategory({id: location.state.id, name:location.state.name, price:location.state.price});
+      setCategory({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname ==="/product") {
-      setProduct({id: location.state.id, name:location.state.name, price:location.state.price});
+      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     }
   }
   },[location.state])
