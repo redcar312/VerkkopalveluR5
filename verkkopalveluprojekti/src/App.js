@@ -81,6 +81,7 @@ function App() {
             <Product
               url={URL}
               product={product}
+              addToCart={addToCart}
             />
           }
         />
