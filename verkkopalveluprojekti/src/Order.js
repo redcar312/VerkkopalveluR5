@@ -1,11 +1,28 @@
 import React from 'react'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import './Order.css'
+import {createRef, setInputIndex} from 'react';
 
-export default function Order({cart, updateAmount}) {
+export default function Order({cart, updateAmount, removeFromCart}) {
 
-    function changeAmount(e, product) {
+    const [inputs, setInputs] = useState([]);
+    const [inputIndex, setInputIndex] = useState(-1);
+
+    useEffect(() => {
+        for (let i = 0; i<cart.length; i++) {
+            inputs[i] = createRef();
+        }
+    }, [cart.length])
+
+    useEffect(() => {
+        if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex.current] !== null) {
+            inputs[inputIndex].current.focus();
+        }
+    }, [cart])
+
+    function changeAmount(e, product, index) {
         updateAmount(e.target.value, product);
+        setInputIndex(index);
     }
 
     return (
@@ -14,21 +31,28 @@ export default function Order({cart, updateAmount}) {
             {
                 cart.map((product) => {
                     return(
-                    <tr>
+                    <tr key ={product.id}>
                         <td>{product.name}</td>
                         <td>{product.price} €</td>
                         <td>
                             <input className="amountInput"
-                            type="number" 
-                            step="1" 
+                            type= "number" 
+                            step= "1" 
+                            min = "1"
                             onChange={ e => changeAmount(e, product)}
                             value={product.amount} 
                             />
                         </td>
+                        <td><button className="btn btn-warning" onClick={() => removeFromCart(product)}>Poista</button></td>
                     </tr>
                     )
-                })
-            }
+                })}
+        <tr>
+            <td className="sumrow"></td>
+            <td className="sumrow"></td>
+            <td className="sumrow"></td>
+            <td className="sumrow"></td>
+        </tr>
         </div>
     )
 }
