@@ -37,6 +37,9 @@ function App() {
   },[location.state])
 
   function addToCart(product) {
+    if (cart.some(item => item.id === product.id)) {
+      
+    }
     product["amount"] = 1;
     const newCart = [...cart,product];
     setCart(newCart);
@@ -53,6 +56,8 @@ function App() {
     product.amount = amount;
     const index = cart.findIndex((item) => item.id === product.id);
     const modifiedCart = Object.assign([...cart], {[index]:product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart', JSON.stringify(modifiedCart));
   }
 
   return (
@@ -73,6 +78,7 @@ function App() {
               url={URL}
               cart={cart}     
               removeFromCart = {removeFromCart}
+              updateAmount = {updateAmount}
             />
         } />
         <Route path="/aboutus" component={AboutUs} />
