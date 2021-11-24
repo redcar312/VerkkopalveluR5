@@ -2,6 +2,7 @@ import React from 'react'
 import {useEffect, useState} from 'react'
 import './Order.css'
 import {createRef, setInputIndex} from 'react';
+import uuid from 'react-uuid'
 
 export default function Order({cart, updateAmount, removeFromCart}) {
 
@@ -29,17 +30,18 @@ export default function Order({cart, updateAmount, removeFromCart}) {
         <div className="container">
             <h3>Ostoskori</h3>
             {
-                cart.map((product) => {
+                cart.map((product, index) => {
                     return(
-                    <tr key ={product.id}>
+                    <tr key ={uuid()}>
                         <td>{product.name}</td>
                         <td>{product.price} €</td>
                         <td>
                             <input className="amountInput"
+                            ref= {inputs[index]}
                             type= "number" 
                             step= "1" 
                             min = "1"
-                            onChange={ e => changeAmount(e, product)}
+                            onChange={ e => changeAmount(e, product, index)}
                             value={product.amount} 
                             />
                         </td>
@@ -47,7 +49,7 @@ export default function Order({cart, updateAmount, removeFromCart}) {
                     </tr>
                     )
                 })}
-        <tr>
+        <tr key={uuid()}>
             <td className="sumrow"></td>
             <td className="sumrow"></td>
             <td className="sumrow"></td>
