@@ -16,8 +16,8 @@ const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 function App() {
   const [category, setCategory] = useState(null);
   const [cart, setCart] = useState([])
-
   const [product, setProduct] = useState(null);
+
   let location = useLocation();
 
   useEffect(()=> {
@@ -39,7 +39,7 @@ function App() {
   function addToCart(product) {
     if (cart.some(item => item.id === product.id)) {
       const existingProduct = cart.filter(item => item.id === product.id);
-      updateAmount(parseInt(existingProduct[0].amount + 1, product));
+      updateAmount(parseInt(existingProduct[0].amount) +1, product);
     } else {
       product["amount"] = 1;
       const newCart = [...cart,product];

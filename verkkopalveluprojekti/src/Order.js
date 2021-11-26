@@ -4,7 +4,7 @@ import './Order.css'
 import {createRef, setInputIndex} from 'react';
 import uuid from 'react-uuid'
 
-export default function Order({cart, updateAmount, removeFromCart}) {
+export default function Order({url, cart, updateAmount, removeFromCart}) {
 
     const [inputs, setInputs] = useState([]);
     const [inputIndex, setInputIndex] = useState(-1);
@@ -41,7 +41,7 @@ export default function Order({cart, updateAmount, removeFromCart}) {
                             type= "number" 
                             step= "1" 
                             min = "1"
-                            onChange={ e => changeAmount(e, product, index)}
+                            onChange={e => changeAmount(e, product, index)}
                             value={product.amount} 
                             />
                         </td>
