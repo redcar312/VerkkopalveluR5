@@ -81,20 +81,16 @@ export default function NavBar({url,cart,setCategory}) {
               <input className="form-control me-2" type="search" placeholder="Hae tuotetta nimellä" aria-label="Search" />
               <button className="btn btn-outline-secondary" type="submit">Hae</button>
             </form>
-            <div>
-              <Link className='nav-link' to='/login'>
+            <Link className='nav-link' to='/login'>
                 Kirjaudu sisään
               </Link>
-            </div>
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+            <ul className="navbar-nav">
+              <li className="nav-item ms-auto">
                 <Cart cart={cart} />
               </li>
             </ul>
           </div>
         </div>
-
-
       </div>
     </nav>
   );
