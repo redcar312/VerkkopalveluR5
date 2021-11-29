@@ -48,3 +48,37 @@ h2 {
 .productLink:hover {
   color: lightblue;
 }
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.btn:hover {
+  transition-duration: 0.2s;
+  background-color: #AFA31D;
+}
+
+.btn:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s;
+  box-shadow: 0 0 5px 15px white;
+}
+
+.btn:active:after {
+  box-shadow: 0 0 0 0 white;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.btn:active {
+  top: 1px;
+}
