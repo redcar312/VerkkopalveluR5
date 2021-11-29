@@ -39,3 +39,12 @@ h2 {
 .addbutton {
   margin-top: 0.5rem;
 }
+
+.productLink {
+  text-decoration: none;
+  color: white;
+}
+
+.productLink:hover {
+  color: lightblue;
+}
