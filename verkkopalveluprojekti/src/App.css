@@ -51,7 +51,7 @@ h2 {
 
 /* Mallia napille otettu netistä osoitteesta: https://codepen.io/ash_s_west/pen/GRZbvym */
 
-.btn {
+.addbutton {
   position: relative;
   cursor: pointer;
   text-align: center;
@@ -59,12 +59,12 @@ h2 {
   transition-duration: 0.2s;
 }
 
-.btn:hover {
+.addbutton:hover {
   transition-duration: 0.2s;
   background-color: #AFA31D;
 }
 
-.btn:after {
+.addbutton:after {
   position: absolute;
   left: 0;
   top: 0;
@@ -73,7 +73,7 @@ h2 {
   box-shadow: 0 0 5px 15px white;
 }
 
-.btn:active:after {
+.addbutton:active:after {
   box-shadow: 0 0 0 0 white;
   left: 0;
   top: 0;
@@ -81,6 +81,6 @@ h2 {
   transition: all 0.2s;
 }
 
-.btn:active {
+.addbutton:active {
   top: 1px;
 }
