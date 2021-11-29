@@ -33,7 +33,7 @@ export default function Home({ url, category,addToCart }) {
           Tervetuloa verkkokauppa Verkkokaupan sivustolle, toivottavasti tykkäät
           meidän hyvistä tuotteista!
         </p>
-          <div>
+          <div className="col-lg-12 col-md-6 col-3">
             <h3>Tuotteita ryhmästä {category?.name}</h3>
             {products.map(product => (
               <div key={product.id} className="products">
