@@ -4,10 +4,17 @@ Kätettäviä värejä:
 2. #E2D64F - keltainen
 3. #F1EBA7 - vaalean keltainen
 4. #AFA31D - tumman keltainen
+
+Uusia värejä:
+1. #E6EAF4 - erittäin vaalean sininen
+2. #94A4D1 - vaalean sininen
+3. #4D68B2 - sininen
+4. #2E3E6B - tumman sininen
+5. #161B27 erittäin tumman sininen
 */
 
 body {
-  background-color: #1A1A1A;
+  background-color: #161B27;
   color: snow;
   margin-bottom: 5rem;
   font-family: sans-serif;
@@ -18,12 +25,12 @@ footer {
   bottom: 0;
   width: 100%;
   height: 100%px;
-  border-top: 4px solid #1F1F1F;
-  background-color: #1A1A1A;
+  border-top: 4px solid #4D68B2;
+  background-color: #2E3E6B;
 }
 
 h2 {
-  color: #F1EBA7;
+  color: #94A4D1;
   text-align: center;
 }
 
@@ -49,8 +56,18 @@ h2 {
   color: lightblue;
 }
 
-.tietoja {
-  margin-top: 2rem;
+/* Numeroinputin nuolet pois */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* Mallia napille otettu netistä osoitteesta: https://codepen.io/ash_s_west/pen/GRZbvym */
