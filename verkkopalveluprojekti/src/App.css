@@ -49,6 +49,10 @@ h2 {
   color: lightblue;
 }
 
+.tietoja {
+  margin-top: 2rem;
+}
+
 /* Mallia napille otettu netistä osoitteesta: https://codepen.io/ash_s_west/pen/GRZbvym */
 
 .addbutton {
