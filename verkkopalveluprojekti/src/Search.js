@@ -4,12 +4,22 @@ import axios from 'axios';
 
 export default function Search({url}) {
     const[products, setProducts] = useState([]);
+    const[productName, setProductName] = useState('');
 
     useEffect(() => {
-        axios.get(url + 'products/search.php')
+        setProductName("Läppäri");
+    })
+
+    useEffect(() => {
+        axios.get(url + 'products/search.php', {
+            params: {
+                name: productName
+            }
+        })
         .then((response) => {
             const json = response.data;
             setProducts(json);
+            console.log(json);
         }).catch(error => {
             if (error.response === undefined) {
                 alert(error);
@@ -21,7 +31,12 @@ export default function Search({url}) {
 
     return (
         <div className="container">
-            <p>Haista vittu</p>
+            {products.map(product => (
+                <ul key={product.id} className="searchItems">
+                    <li>{product.name}</li>
+                    <li>{product.price} €</li>
+                </ul>
+            ))}
         </div>
     )
 }
