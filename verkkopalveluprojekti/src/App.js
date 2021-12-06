@@ -10,6 +10,7 @@ import LogIn from './LogIn';
 import React from 'react';
 import Product from './Product';
 import Order from './Order';
+import Search from './Search';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
@@ -85,6 +86,11 @@ function App() {
         } />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
+        <Route path="/search" render={() =>
+            <Search 
+              url = {URL}
+            />
+        } />
         <Route path="/product" render={() =>
             <Product
               url={URL}

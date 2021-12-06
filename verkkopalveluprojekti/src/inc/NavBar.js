@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Cart from '../Cart'
-import Search from '../Search'
+import Searchbar from './Searchbar'
 
 
 export default function NavBar({url,cart,setCategory}) {
@@ -79,7 +79,7 @@ export default function NavBar({url,cart,setCategory}) {
               </Link>
             </div>
             <div className="nav-item">
-              <Search />
+              <Searchbar />
             </div>
             <Link className='nav-link' to='/login'>
                 Kirjaudu sisään
