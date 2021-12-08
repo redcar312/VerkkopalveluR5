@@ -16,10 +16,15 @@ const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
   const [category, setCategory] = useState(null);
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
   const [product, setProduct] = useState(null);
+  const [search, setSearch] = useState('');
 
   let location = useLocation();
+
+  useEffect(() => {
+    console.log(search)
+  })
 
   useEffect(()=> {
     if ('cart' in localStorage) {
@@ -33,6 +38,8 @@ function App() {
       setCategory({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname ==="/product") {
       setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
+    } else if (location.pathname === "/search") {
+      setSearch({name:location.state.name});
     }
   }
   },[location.state])
@@ -87,8 +94,10 @@ function App() {
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
         <Route path="/search" render={() =>
-            <Search 
+            <Search
               url = {URL}
+              product = {product}
+              search = {search}
             />
         } />
         <Route path="/product" render={() =>

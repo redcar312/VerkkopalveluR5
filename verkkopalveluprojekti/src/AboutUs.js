@@ -10,10 +10,10 @@ export default function AboutUs() {
                 puhelimista kodinkoneisiin. Tekijöinä ovat OAMKin opiskelijat Joonas Kelahaara, Konsta Jäske, Riku Honkamäki, Matias Hurtamo ja Joonas Kokko. Sivusto on toteutettu käyttämällä REACTia, PHPtä ja SQLlää.
                 Jos joku keksii jotain hyviä lisätietoja tänne niin lisäilkää menemään, mulla ei mielikuvitus riitä
         
-            <h3 class="tietoja">
+            <h3 className="tietoja">
                 Maksutavat
             </h3>
-            <div class="infoTeksti">
+            <div className="infoTeksti">
                 Maksutapoina yrityksessämme toimii Maksukortti, tilisiirto ja maksuluotto. Tuotteet on mahdollista saada myös laskulla.
             </div>
             </div>

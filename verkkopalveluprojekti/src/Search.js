@@ -2,18 +2,13 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-export default function Search({url}) {
+export default function Search({url, search}) {
     const[products, setProducts] = useState([]);
-    const[productName, setProductName] = useState('');
-
-    useEffect(() => {
-        setProductName("Läppäri");
-    })
 
     useEffect(() => {
         axios.get(url + 'products/search.php', {
             params: {
-                name: productName
+                name: search?.name
             }
         })
         .then((response) => {

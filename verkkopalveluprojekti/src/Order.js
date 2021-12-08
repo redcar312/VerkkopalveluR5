@@ -5,9 +5,9 @@ import {createRef, setInputIndex} from 'react';
 import uuid from 'react-uuid'
 
 export default function Order({url, cart, updateAmount, removeFromCart}) {
-
     const [inputs, setInputs] = useState([]);
     const [inputIndex, setInputIndex] = useState(-1);
+    let sumAll = 0;
 
     useEffect(() => {
         for (let i = 0; i<cart.length; i++) {
@@ -26,11 +26,17 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
         setInputIndex(index);
     }
 
+    function productSum(price, amount) {
+        let sum = price * amount;
+        return sum.toFixed(2);
+    }
+
     return (
         <div className="container">
             <h3>Ostoskori</h3>
             {
                 cart.map((product, index) => {
+                    sumAll += parseFloat(product.price) * product.amount;
                     return(
                     <tr key ={uuid()}>
                         <td>{product.name}</td>
@@ -45,6 +51,8 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                             value={product.amount} 
                             />
                         </td>
+                        <td> = </td>
+                        <td>{productSum(product.price, product.amount)} €</td>
                         <td><button className="btn btn-warning" onClick={() => removeFromCart(product)}>Poista</button></td>
                     </tr>
                     )
@@ -53,7 +61,8 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
             <td className="sumrow"></td>
             <td className="sumrow"></td>
             <td className="sumrow"></td>
-            <td className="sumrow"></td>
+            <td className="sumrow">Yhteensä: </td>
+            <td className="sumrow">{sumAll.toFixed(2)} €</td>
         </tr>
         </div>
     )
