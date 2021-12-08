@@ -38,6 +38,16 @@ h2 {
   text-align: center;
 }
 
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: lightblue;
+}
+
 .products {
   display: inline-block;
   margin-right: 2rem;
