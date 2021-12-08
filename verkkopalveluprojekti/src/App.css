@@ -45,7 +45,8 @@ h2 {
 }
 
 .homeImage {
-  size: 40%;
+  max-width: 40%;
+  max-height: 40%;
 }
 
 .link {
