@@ -27,6 +27,7 @@ footer {
   height: 100%px;
   border-top: 4px solid #4D68B2;
   background-color: #2E3E6B;
+  padding-bottom: 0.5rem;
 }
 
 h2 {
@@ -36,6 +37,15 @@ h2 {
 
 .infoTeksti {
   text-align: center;
+}
+
+.categoryDropDown {
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #161B27;
+}
+
+.homeImage {
+  size: 40%;
 }
 
 .link {

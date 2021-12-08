@@ -8,7 +8,7 @@ export default function Product({ product, url, addToCart }) {
             <div className="col-12">
                 <h2>{product?.name}</h2>
                 <div className="kuva">
-                    <img src={url + 'img/' + product?.image} alt="" />
+                    <img className="image-fluid oneProductImage" src={url + 'img/' + product?.image} alt="" />
                 </div>
                 <p className='infoTeksti'>{product?.price}€</p>
                 <p className='infoTeksti'>Tähän tulee sitten hullua dataa kaikista usko_mattomista tuotteista</p>

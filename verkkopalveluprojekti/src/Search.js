@@ -27,9 +27,12 @@ export default function Search({url, search}) {
     return (
         <div className="container">
             {products.map(product => (
-                <ul key={product.id} className="searchItems">
-                    <li>{product.name}</li>
-                    <li>{product.price} €</li>
+                <ul>
+                    <li key={product.id}>
+                        {product.name}, 
+                        {product.price} €, 
+                        <img src={url + 'img/' + product.image} alt="" />
+                    </li>
                 </ul>
             ))}
         </div>
