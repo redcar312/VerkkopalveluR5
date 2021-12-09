@@ -63,7 +63,7 @@ export default function Home({ url, category,addToCart }) {
                   }
                 }}>
                 <div>
-                  <img src={url + 'img/' + product.image} alt="" />
+                  <img className="image-fluid homeImage" src={url + 'img/' + product.image} alt="" />
                 </div>
                 </Link>
                 <button className="btn btn-warning addbutton" type="button" onClick={e => addToCart(product)}>Lisää</button>

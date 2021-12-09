@@ -5,3 +5,9 @@
 .tietoja {
     margin-top: 2rem;
 }
+
+.oneProductImage {
+    size: 100%;
+    max-height: 50%;
+    max-width: 50%;
+}

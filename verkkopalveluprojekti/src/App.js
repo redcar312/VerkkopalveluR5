@@ -39,7 +39,7 @@ function App() {
     } else if (location.pathname ==="/product") {
       setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname === "/search") {
-      setSearch({name:location.state.name});
+      setSearch(location.state.name);
     }
   }
   },[location.state])

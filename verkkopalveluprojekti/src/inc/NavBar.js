@@ -57,7 +57,7 @@ export default function NavBar({url,cart,setCategory}) {
                 aria-labelledby='navbarDropdownMenuLink'
               >
               {categories.map(category => (
-                <li key={category.id}>
+                <li className="categoryDropDown" key={category.id}>
                   <Link
                   className="dropdown-item"
                   to={{

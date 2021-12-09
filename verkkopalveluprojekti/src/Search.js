@@ -6,11 +6,7 @@ export default function Search({url, search}) {
     const[products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get(url + 'products/search.php', {
-            params: {
-                name: search?.name
-            }
-        })
+        axios.get(url + 'products/search.php?name=' + search)
         .then((response) => {
             const json = response.data;
             setProducts(json);
@@ -27,9 +23,12 @@ export default function Search({url, search}) {
     return (
         <div className="container">
             {products.map(product => (
-                <ul key={product.id} className="searchItems">
-                    <li>{product.name}</li>
-                    <li>{product.price} €</li>
+                <ul>
+                    <li key={product.id}>
+                        {product.name}, 
+                        {product.price} €, 
+                        <img src={url + 'img/' + product.image} alt="" />
+                    </li>
                 </ul>
             ))}
         </div>
