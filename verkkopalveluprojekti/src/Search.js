@@ -6,11 +6,7 @@ export default function Search({url, search}) {
     const[products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get(url + 'products/search.php', {
-            params: {
-                name: search?.name
-            }
-        })
+        axios.get(url + 'products/search.php?name=' + search)
         .then((response) => {
             const json = response.data;
             setProducts(json);
