@@ -87,8 +87,8 @@ function App() {
             <Order 
               url={URL}
               cart={cart}     
-              removeFromCart = {removeFromCart}
               updateAmount = {updateAmount}
+              removeFromCart = {removeFromCart}
             />
         } />
         <Route path="/aboutus" component={AboutUs} />
