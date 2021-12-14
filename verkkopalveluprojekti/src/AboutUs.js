@@ -25,7 +25,7 @@ export default function AboutUs() {
             </h2>
             <div className="infoTeksti">
              <p>© Konsta Jäske, Joonas Kelahaara, Joonas Kokko, Matias Hurtamo, Riku Honkamäki</p>
-                asiakaspalvelu@verkkis.kjeh
+                asiakaspalvelu@voima.kjeh
             </div>
             </div>
         </div>
