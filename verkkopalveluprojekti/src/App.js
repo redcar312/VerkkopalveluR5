@@ -98,7 +98,7 @@ function App() {
         
         <Route path="/search" render={() =>
             
-           <Search 
+           <Search
               url = {URL}
               product = {product}
               search = {search}
