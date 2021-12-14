@@ -30,7 +30,7 @@ export default function Home({ url, category,addToCart }) {
       <div className='col-12'>
         <h2>Tervetuloa verkkokauppaan!</h2>
         <p className='infoTeksti'>
-          Tervetuloa verkkokauppa Verkkokaupan sivustolle, toivottavasti tykkäät
+          Tervetuloa verkkokauppa Voiman sivustolle, toivottavasti tykkäät
           meidän hyvistä tuotteista!
         </p>
           <div>
