@@ -132,7 +132,7 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                             <input className="form-control orderForm" onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className="buttons">
-                            <button className="btn btn-primary orderButton">Order</button>
+                            <button className="btn btn-warning orderButton">Order</button>
                         </div>
                     </form>
                     </>
