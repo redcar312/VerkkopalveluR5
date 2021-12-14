@@ -37,6 +37,38 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
         return sum.toFixed(2);
     }
 
+    function order(e) {
+        e.preventDefault();
+        fetch(url + 'order/add.php' , {
+            method: 'POST' ,
+            header: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstname: firstname,
+                lastname: lastname,
+                address: address,
+                zip: zip,
+                city: city,
+                cart: cart,
+            })
+        })
+        .then (res => {
+            return res.json();
+        })
+        .then (
+            (res) => {
+                removeFromCart();
+                setFinished(true);
+            }, (error) => {
+                alert(error);
+            }
+        )
+    }
+
+    let sum = 0;
+
     if (finished === false) {
         return (
             <div>
@@ -78,7 +110,7 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                 {cart.length > 0 && // render order from if there is something in the cart
                     <>
                     <h3 className= "header">Client Infromation</h3>
-                    <form onSubmit={Order}>
+                    <form onSubmit={order}>
                         <div className="form-group">
                             <label>First Name:</label>
                             <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
@@ -98,6 +130,23 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                         <div className="form-group">
                             <label>City:</label>
                             <input className="form-control" onChange={e => setCity(e.target.value)}/>
+                            <input ClassName="form-control" onChange={e => setFirstname(e.target.value)}/>
+                        </div>
+                        <div className="form-group">
+                            <label>Last Name:</label>
+                            <input ClassName="form-control" onChange={e => setLastname(e.target.value)}/>
+                        </div>
+                        <div className="form-group">
+                            <label>Address:</label>
+                            <input ClassName="form-control" onChange={e => setAddress(e.target.value)}/>
+                        </div>
+                        <div className="form-group">
+                            <label>Postal code:</label>
+                            <input ClassName="form-control" onChange={e => setZip(e.target.value)}/>
+                        </div>
+                        <div className="form-group">
+                            <label>City:</label>
+                            <input ClassName="form-control" onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className="buttons">
                             <button className="btn-btn primary">Order</button>
