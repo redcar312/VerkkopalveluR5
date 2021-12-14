@@ -39,7 +39,7 @@ function App() {
     } else if (location.pathname ==="/product") {
       setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname === "/search") {
-      setSearch({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
+      setSearch(location.state.name);
     }
   }
   },[location.state])
@@ -87,8 +87,8 @@ function App() {
             <Order 
               url={URL}
               cart={cart}     
-              removeFromCart = {removeFromCart}
               updateAmount = {updateAmount}
+              removeFromCart = {removeFromCart}
             />
         } />
         <Route path="/aboutus" component={AboutUs} />

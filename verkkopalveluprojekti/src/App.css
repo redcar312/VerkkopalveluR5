@@ -45,7 +45,8 @@ h2 {
 }
 
 .homeImage {
-  size: 40%;
+  max-width: 80%;
+  max-height: 80%;
 }
 
 .link {
@@ -60,7 +61,18 @@ h2 {
 
 .products {
   display: inline-block;
-  margin-right: 2rem;
+  margin-right: 1rem;
+}
+
+.searchProduct {
+  text-decoration: none;
+  list-style-type: none;
+  display:block;
+}
+
+.searchImage {
+  max-width: 30%;
+  max-height: 30%;
 }
 
 .addbutton {
