@@ -30,13 +30,13 @@ export default function Home({ url, category,addToCart }) {
       <div className='col-12'>
         <h2>Tervetuloa verkkokauppaan!</h2>
         <p className='infoTeksti'>
-          Tervetuloa verkkokauppa Verkkokaupan sivustolle, toivottavasti tykkäät
+          Tervetuloa verkkokauppa Voiman sivustolle, toivottavasti tykkäät
           meidän hyvistä tuotteista!
         </p>
-          <div className="col-lg-12 col-md-6 col-3">
+          <div>
             <h3>Tuotteita ryhmästä {category?.name}</h3>
             {products.map(product => (
-              <div key={product.id} className="products">
+              <div key={product.id} className=" col-lg-2 col-md-4 col-sm-12 products">
 
                 <Link className="productLink"
                   to={{
@@ -45,7 +45,8 @@ export default function Home({ url, category,addToCart }) {
                   id: product.id,
                   name: product.name,
                   price: product.price,
-                  image: product.image
+                  image: product.image,
+                  info: product.info
                   }
                   }}
                 >
@@ -59,11 +60,12 @@ export default function Home({ url, category,addToCart }) {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.image
+                    image: product.image,
+                    info: product.info
                   }
                 }}>
                 <div>
-                  <img src={url + 'img/' + product.image} alt="" />
+                  <img className="img-fluid homeImage" src={url + 'img/' + product.image} alt="" />
                 </div>
                 </Link>
                 <button className="btn btn-warning addbutton" type="button" onClick={e => addToCart(product)}>Lisää</button>

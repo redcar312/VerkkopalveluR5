@@ -17,10 +17,15 @@ const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
   const [category, setCategory] = useState(null);
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
   const [product, setProduct] = useState(null);
+  const [search, setSearch] = useState('');
 
   let location = useLocation();
+
+  useEffect(() => {
+    console.log(search)
+  })
 
   useEffect(()=> {
     if ('cart' in localStorage) {
@@ -33,7 +38,9 @@ function App() {
       if (location.pathname==="/") {
       setCategory({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname ==="/product") {
-      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
+      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image, info:location.state.info});
+    } else if (location.pathname === "/search") {
+      setSearch(location.state.name);
     }
   }
   },[location.state])
@@ -81,17 +88,23 @@ function App() {
             <Order 
               url={URL}
               cart={cart}     
-              removeFromCart = {removeFromCart}
               updateAmount = {updateAmount}
+              removeFromCart = {removeFromCart}
             />
         } />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
         <Route path="/register" component={register} />
         <Route path="/search" render={() =>
+<<<<<<< HEAD
            
            <Search 
+=======
+            <Search
+>>>>>>> 2268acadbbb5a66d77512c2cb2c7d16a22f02067
               url = {URL}
+              product = {product}
+              search = {search}
             />
         } />
         <Route path="/product" render={() =>

@@ -12,3 +12,17 @@ td {
 .amountInput {
     width: 5em;
 }
+
+.orderForm {
+    margin-left: 20rem;
+    max-width: 50%;
+}
+
+.orderButton {
+    margin-top: 0.3rem;
+    margin-left: 20rem;
+}
+
+.orderFormGroup {
+    align-content: center;
+}
