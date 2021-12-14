@@ -83,7 +83,10 @@ export default function NavBar({url,cart,setCategory}) {
             </div>
             <Link className='nav-link' to='/login'>
                 Kirjaudu sisään
-              </Link>
+             
+             </Link>
+             <Link className='nav-link' to='/register'>
+               Rekisteröidy </Link>
             <ul className="navbar-nav">
               <li className="nav-item ms-auto">
                 <Cart cart={cart} />

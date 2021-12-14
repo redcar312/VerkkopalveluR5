@@ -4,10 +4,15 @@
 }
 .tietoja {
     margin-top: 2rem;
+    text-align: center;
 }
 
 .oneProductImage {
     size: 100%;
     max-height: 50%;
     max-width: 50%;
+}
+
+.productInfo {
+    text-align: center;
 }

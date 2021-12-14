@@ -67,16 +67,20 @@ h2 {
 .searchProduct {
   text-decoration: none;
   list-style-type: none;
-  display:block;
+  display:inline-block;
 }
 
 .searchImage {
-  max-width: 30%;
-  max-height: 30%;
+  max-width: 25%;
+  max-height: 25%;
 }
 
 .addbutton {
   margin-top: 0.5rem;
+}
+
+.showButton {
+  max-width: 10%;
 }
 
 .productLink {

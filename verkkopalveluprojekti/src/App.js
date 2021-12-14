@@ -12,6 +12,7 @@ import Product from './Product';
 import Order from './Order';
 import Search from './Search';
 
+import register from './register';
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
       if (location.pathname==="/") {
       setCategory({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
     } else if (location.pathname ==="/product") {
-      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
+      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image, info:location.state.info});
     } else if (location.pathname === "/search") {
       setSearch(location.state.name);
     }
@@ -93,8 +94,11 @@ function App() {
         } />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
+        <Route path="/register" component={register} />
+        
         <Route path="/search" render={() =>
-            <Search
+            
+           <Search
               url = {URL}
               product = {product}
               search = {search}
