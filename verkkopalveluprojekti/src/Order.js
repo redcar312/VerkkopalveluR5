@@ -81,23 +81,23 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                     <form onSubmit={Order}>
                         <div className="form-group">
                             <label>First Name:</label>
-                            <input Classname="form-control" onChange={e => setFirstname(e.target.value)}/>
+                            <input className="form-control" onChange={e => setFirstname(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label>Last Name:</label>
-                            <input Classname="form-control" onChange={e => setLastname(e.target.value)}/>
+                            <input className="form-control" onChange={e => setLastname(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label>Address:</label>
-                            <input Classname="form-control" onChange={e => setAddress(e.target.value)}/>
+                            <input className="form-control" onChange={e => setAddress(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label>Postal code:</label>
-                            <input Classname="form-control" onChange={e => setZip(e.target.value)}/>
+                            <input className="form-control" onChange={e => setZip(e.target.value)}/>
                         </div>
                         <div className="form-group">
                             <label>City:</label>
-                            <input Classname="form-control" onChange={e => setCity(e.target.value)}/>
+                            <input className="form-control" onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className="buttons">
                             <button className="btn-btn primary">Order</button>
