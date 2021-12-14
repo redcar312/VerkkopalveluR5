@@ -95,13 +95,10 @@ function App() {
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
         <Route path="/register" component={register} />
+        
         <Route path="/search" render={() =>
-<<<<<<< HEAD
-           
+            
            <Search 
-=======
-            <Search
->>>>>>> 2268acadbbb5a66d77512c2cb2c7d16a22f02067
               url = {URL}
               product = {product}
               search = {search}
