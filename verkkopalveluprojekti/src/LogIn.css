@@ -139,15 +139,16 @@ body {
   }
 
   h1 {
-      margin-top: 40px;
-      margin-left: 40px;
+      text-align: center;
+      margin-top: 30px;
       color: #94A4D1;
   }
 
   h3 {
     text-align: center;
     align-content: center;
-    margin: 30px;
+    margin-top: 65px;
+    margin-bottom: 10px;
 }
 
 #dd {
