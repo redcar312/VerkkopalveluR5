@@ -62,6 +62,7 @@ h2 {
 .products {
   display: inline-block;
   margin-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 .searchProduct {
