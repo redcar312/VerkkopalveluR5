@@ -45,7 +45,8 @@ export default function Home({ url, category,addToCart }) {
                   id: product.id,
                   name: product.name,
                   price: product.price,
-                  image: product.image
+                  image: product.image,
+                  info: product.info
                   }
                   }}
                 >
@@ -59,7 +60,8 @@ export default function Home({ url, category,addToCart }) {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.image
+                    image: product.image,
+                    info: product.info
                   }
                 }}>
                 <div>
