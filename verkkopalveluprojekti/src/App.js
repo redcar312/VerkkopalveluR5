@@ -12,6 +12,7 @@ import Product from './Product';
 import Order from './Order';
 import Search from './Search';
 
+import register from './register';
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
@@ -93,8 +94,14 @@ function App() {
         } />
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
+        <Route path="/register" component={register} />
         <Route path="/search" render={() =>
+<<<<<<< HEAD
+           
+           <Search 
+=======
             <Search
+>>>>>>> 2268acadbbb5a66d77512c2cb2c7d16a22f02067
               url = {URL}
               product = {product}
               search = {search}

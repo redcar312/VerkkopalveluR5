@@ -1,24 +1,24 @@
-import './App.css'
 import React from 'react'
+import './App.css'
 import { useState, useEffect } from 'react'
-import NavBar from './inc/NavBar'
-import Footer from './inc/Footer'
 import axios from 'axios'
 
-export default function registerUser () {
+export default function Register (url) {
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
   const [uname, setUname] = useState('')
   const [passwd, setPasswd] = useState('')
   
-  const send = e =>{
+  const post = e =>{
       e.preventDefault();
-      axios.post("http://localhost/verkkopalveluprojekti_ryhma_5/functions.php"),{
-       fname: fname,
+      axios.post("http://localhost/verkkopalveluprojekti_ryhma_5/register/register.php",{
+     
+      fname: fname,
        lname: lname,
        uname: uname,
        passwd: passwd,
-      }
+   
+      })
   }
 
   return (
@@ -41,7 +41,7 @@ export default function registerUser () {
           <input value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
-           <button onClick={send}>Rekisteröidy</button>
+           <button onClick={post}>Rekisteröidy</button>
        </div>
       </form>
     </div>
