@@ -71,8 +71,8 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
 
     if (finished === false) {
         return (
-            <div>
-                    <div className="container">
+            <div className="container">
+                    <div>
                         <h3>Ostoskori</h3>
                         {
                             cart.map((product, index) => {
@@ -110,7 +110,7 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                 {cart.length > 0 && // render order from if there is something in the cart
                     <>
                     <h3 className= "header">Client Infromation</h3>
-                    <form onSubmit={order}>
+                    <form className="orderFormGroup" onSubmit={order}>
                         <div className="form-group">
                             <label className="orderForm">First Name:</label>
                             <input className="form-control orderForm" onChange={e => setFirstname(e.target.value)}/>
