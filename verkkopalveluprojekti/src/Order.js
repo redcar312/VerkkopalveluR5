@@ -51,7 +51,7 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                 address: address,
                 zip: zip,
                 city: city,
-                cart: cart,
+                cart: cart
             })
         })
         .then (res => {
@@ -105,7 +105,7 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                         <td className="sumrow">{sumAll.toFixed(2)} €</td>
                     </tr>
                     </div>
-                )
+                
 
                 {cart.length > 0 && // render order from if there is something in the cart
                     <>
@@ -130,23 +130,6 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                         <div className="form-group">
                             <label>City:</label>
                             <input className="form-control" onChange={e => setCity(e.target.value)}/>
-                            <input ClassName="form-control" onChange={e => setFirstname(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Last Name:</label>
-                            <input ClassName="form-control" onChange={e => setLastname(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Address:</label>
-                            <input ClassName="form-control" onChange={e => setAddress(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>Postal code:</label>
-                            <input ClassName="form-control" onChange={e => setZip(e.target.value)}/>
-                        </div>
-                        <div className="form-group">
-                            <label>City:</label>
-                            <input ClassName="form-control" onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className="buttons">
                             <button className="btn-btn primary">Order</button>
