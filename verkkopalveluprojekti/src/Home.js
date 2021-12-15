@@ -28,7 +28,7 @@ export default function Home({ url, category,addToCart }) {
   return (
     <div className='container'>
       <div className='col-12'>
-        <h2>Tervetuloa verkkokauppaan!</h2>
+        <h2>Tervetuloa Voimaan!</h2>
         <p className='infoTeksti'>
           Tervetuloa verkkokauppa Voiman sivustolle, toivottavasti tykkäät
           meidän hyvistä tuotteista!
