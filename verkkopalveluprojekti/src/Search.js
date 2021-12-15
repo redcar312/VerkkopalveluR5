@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import './App.css';
+import uuid from 'react-uuid';
 
 export default function Search({url, search}) {
     const[products, setProducts] = useState([]);
@@ -25,9 +26,9 @@ export default function Search({url, search}) {
     return (
         <div className="container">
             <h2>Haulla "{search}" löytyi:</h2>
+            <ul>
             {products.map(product => (
-                <ul>
-                    <li className="col-12 searchProduct" key={product.id}>
+                    <li key={uuid()} className="col-12 searchProduct" key={product.id}>
                         <div>
                         <Link to={{
                             pathname: '/product',
@@ -39,7 +40,7 @@ export default function Search({url, search}) {
                                 info: product.info
                                 }
                             }}>
-                        <img className="img-fluid searchImage" src={url + 'img/' + product.image} alt="" />
+                        <img className="img-fluid searchImage" src={url + 'img/' + product?.image} alt="" />
                         </Link>
                         </div>
                         <div>
@@ -74,8 +75,8 @@ export default function Search({url, search}) {
                         </Link>
                         </div>
                     </li>
-                </ul>
             ))}
+            </ul>
         </div>
     )
 }
