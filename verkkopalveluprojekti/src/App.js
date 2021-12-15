@@ -71,6 +71,11 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(modifiedCart));
   }
 
+  function emptyCart(){
+    setCart([]);
+    localStorage.removeItem('cart');
+  }
+
   return (
     <>
     <NavBar url={URL} setCategory={setCategory} cart={cart} />
@@ -87,7 +92,8 @@ function App() {
         <Route path="/order" render={() =>
             <Order 
               url={URL}
-              cart={cart}     
+              cart={cart}   
+              emptyCart = {emptyCart}  
               updateAmount = {updateAmount}
               removeFromCart = {removeFromCart}
             />

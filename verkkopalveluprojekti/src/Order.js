@@ -4,7 +4,7 @@ import './Order.css'
 import {createRef, setInputIndex} from 'react';
 import uuid from 'react-uuid'
 
-export default function Order({url, cart, updateAmount, removeFromCart}) {
+export default function Order({url, cart, updateAmount, removeFromCart, emptyCart}) {
     const [inputs, setInputs] = useState([]);
     const [inputIndex, setInputIndex] = useState(-1);
     let sumAll = 0;
@@ -59,8 +59,8 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
         })
         .then (
             (res) => {
-                removeFromCart();
                 setFinished(true);
+                emptyCart();
             }, (error) => {
                 alert(error);
             }
@@ -72,6 +72,8 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
             <div className="container">
                     <div>
                         <h3>Ostoskori</h3>
+                        <table>
+                            <tbody>
                         {
                             cart.map((product, index) => {
                                 sumAll += parseFloat(product.price) * product.amount;
@@ -95,13 +97,20 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
                                 </tr>
                                 )
                             })}
+                            </tbody>
+                        </table>
+                    <table>
+                    <tbody>
                     <tr key={uuid()}>
                         <td className="sumrow"></td>
                         <td className="sumrow"></td>
                         <td className="sumrow"></td>
                         <td className="sumrow">Yhteensä: </td>
                         <td className="sumrow">{sumAll.toFixed(2)} €</td>
+                        <td className="sumrow"><button className="btn btn-danger" onClick={() => emptyCart()}>Tyhjennä ostoskori</button></td>
                     </tr>
+                    </tbody>
+                    </table>    
                     </div>
                 
 
