@@ -116,30 +116,30 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
 
                 {cart.length > 0 && // render order from if there is something in the cart
                     <>
-                    <h3 className= "header">Client Infromation</h3>
+                    <h3 className= "header">Asiakkaan tiedot</h3>
                     <form className="orderFormGroup" onSubmit={order}>
                         <div className="form-group">
-                            <label className="orderForm">First Name:</label>
+                            <label className="orderForm">Etunimi:</label>
                             <input className="form-control orderForm" onChange={e => setFirstname(e.target.value)}/>
                         </div>
                         <div className="form-group">
-                            <label className="orderForm">Last Name:</label>
+                            <label className="orderForm">Sukunimi:</label>
                             <input className="form-control orderForm" onChange={e => setLastname(e.target.value)}/>
                         </div>
                         <div className="form-group">
-                            <label className="orderForm">Address:</label>
+                            <label className="orderForm">Osoite:</label>
                             <input className="form-control orderForm" onChange={e => setAddress(e.target.value)}/>
                         </div>
                         <div className="form-group">
-                            <label className="orderForm">Postal code:</label>
+                            <label className="orderForm">Postinumero:</label>
                             <input className="form-control orderForm" onChange={e => setZip(e.target.value)}/>
                         </div>
                         <div className="form-group">
-                            <label className="orderForm">City:</label>
+                            <label className="orderForm">Postitoimipaikka:</label>
                             <input className="form-control orderForm" onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className="buttons">
-                            <button className="btn btn-warning orderButton">Order</button>
+                            <button className="btn btn-warning orderButton">Tilaa</button>
                         </div>
                     </form>
                     </>
