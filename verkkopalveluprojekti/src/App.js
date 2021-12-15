@@ -95,7 +95,6 @@ function App() {
         <Route path="/aboutus" component={AboutUs} />
         <Route path="/login" component={LogIn} />
         <Route path="/register" component={register} />
-        
         <Route path="/search" render={() =>
             
            <Search

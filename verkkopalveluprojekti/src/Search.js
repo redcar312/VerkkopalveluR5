@@ -28,20 +28,8 @@ export default function Search({url, search}) {
             {products.map(product => (
                 <ul>
                     <li className="col-12 searchProduct" key={product.id}>
-                        <Link className="productLink"
-                            to={{
-                            pathname: '/product',
-                            state: {
-                            id: product.id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            info: product.info
-                            }
-                            }}>{product.name}
-                        </Link>
-                        <p className="col-12">{product.price} €</p>
-                        <Link className="col-12" to={{
+                        <div>
+                        <Link to={{
                             pathname: '/product',
                             state: {
                                 id: product.id,
@@ -52,7 +40,25 @@ export default function Search({url, search}) {
                                 }
                             }}>
                         <img className="img-fluid searchImage" src={url + 'img/' + product.image} alt="" />
-                        <Link className="col-12 btn btn-warning showButton"
+                        </Link>
+                        </div>
+                        <div>
+                        <Link className="productLink"
+                            to={{
+                            pathname: '/product',
+                            state: {
+                            id: product.id,
+                            name: product.name,
+                            price: product.price,
+                            image: product.image,
+                            info: product.info
+                            }
+                            }}>Tuote: {product.name}
+                        </Link>
+                        </div>
+                        <div>Hinta: {product.price} €</div>
+                        <div>
+                        <Link className="btn btn-warning showButton"
                             to={{
                             pathname: '/product',
                             state: {
@@ -66,7 +72,7 @@ export default function Search({url, search}) {
                             >
                             Näytä tuote
                         </Link>
-                        </Link>
+                        </div>
                     </li>
                 </ul>
             ))}
