@@ -10,7 +10,7 @@ export default function LogIn() {
             <input id="dd" type="text" />
             <h3>Salasana</h3>
             <input id="dd" type="text" />
-            <Link to="/register">Etkö ole vielä asiakas? Rekisteröidy tästä! (kesken) </Link>
+            <Link to="/register">Etkö ole vielä asiakas? Rekisteröidy tästä!</Link>
         </div>
     )
 }
