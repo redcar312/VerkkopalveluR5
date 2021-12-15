@@ -97,12 +97,8 @@ function App() {
         <Route path="/register" component={register} />
         
         <Route path="/search" render={() =>
-<<<<<<< HEAD
-            <Search
-=======
             
            <Search
->>>>>>> fb6bc5eaf0286ba3c8bc397642f980aeb7d66793
               url = {URL}
               product = {product}
               search = {search}

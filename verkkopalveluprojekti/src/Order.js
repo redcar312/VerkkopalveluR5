@@ -67,8 +67,6 @@ export default function Order({url, cart, updateAmount, removeFromCart}) {
         )
     }
 
-    let sum = 0;
-
     if (finished === false) {
         return (
             <div className="container">
