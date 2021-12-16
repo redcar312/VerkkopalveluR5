@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Cart from '../Cart'
 import Searchbar from './Searchbar'
+const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 
 export default function NavBar({url,cart,setCategory}) {
@@ -27,8 +28,8 @@ export default function NavBar({url,cart,setCategory}) {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
       <div className='container-fluid'>
-        <Link className='navbar-brand' to='/'>
-          Voima
+        <Link className='logo' to='/'>
+        <img src={url + 'img/' + 'voima-logo.png'} alt="logo" />
         </Link>
         <button
           className='navbar-toggler'
