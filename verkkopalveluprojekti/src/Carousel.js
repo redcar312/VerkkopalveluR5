@@ -43,7 +43,7 @@ export default function Carousel({url, product}) {
                         height='500px'
                         width='250px'
                         src={url + 'img/' + card.image} 
-                        alt="" />
+                        alt="..." />
                     <p>{card.name}, {card.price} €</p>
                 </div>
               ))}

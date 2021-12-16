@@ -45,7 +45,7 @@ export default function Register () {
 
 
   return (
-    <div id="regdiv">
+    <div className="container">
       <h2 className="registerTitle">Rekisteröidy</h2>
       <form onSubmit={registerUser}>
         <div>
@@ -65,7 +65,7 @@ export default function Register () {
           <input id="reg" value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
-           <button type='button' class="btn btn-warning block">Rekisteröidy</button>
+           <button type='button' className="btn btn-warning block">Rekisteröidy</button>
        </div>
       </form>
     </div>
