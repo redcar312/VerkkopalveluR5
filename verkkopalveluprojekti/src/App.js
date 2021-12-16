@@ -11,6 +11,7 @@ import React from 'react';
 import Product from './Product';
 import Order from './Order';
 import Search from './Search';
+import Carousel from './Carousel'
 
 import register from './register';
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";

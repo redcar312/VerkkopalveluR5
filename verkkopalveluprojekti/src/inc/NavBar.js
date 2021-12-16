@@ -27,8 +27,8 @@ export default function NavBar({url,cart,setCategory}) {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
       <div className='container-fluid'>
-        <Link className='navbar-brand' to='/'>
-          Voima
+        <Link className='logo' to='/'>
+        <img src={url + 'img/' + 'voima-logo-mini.png'} alt="logo" />
         </Link>
         <button
           className='navbar-toggler'

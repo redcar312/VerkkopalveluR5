@@ -144,7 +144,7 @@ body {
       color: #94A4D1;
   }
 
-  h3 {
+  h4 {
     text-align: center;
     align-content: center;
     margin-top: 70px;
@@ -154,12 +154,17 @@ body {
 #dd {
     text-align: center;
     align-content: center;
-    width: 50rem;
+    width: 100%;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     border-bottom: 1px solid;
     margin-top: 0.3rem;
-    margin-left: 22rem;
+}
+
+div.row {
+    margin-top: 65px;
+    text-align: center;
+    align-content: center;
 }
 
 
