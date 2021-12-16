@@ -30,19 +30,7 @@ export default function Register () {
     .then (res=> {
       return res.json
     }). catch(error => alert(error))
-
-    
-
-   
   }
-
-  
-    
-  
-      
-  
-    
-
 
   return (
     <div className="container">
