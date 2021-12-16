@@ -26,7 +26,6 @@ export default function LogIn() {
     }
     
     return (
-<<<<<<< HEAD
         <div>
           <form onSubmit={checkUser}>
            <div>
@@ -42,8 +41,7 @@ export default function LogIn() {
             </div> 
               
               </form>  
-          
-=======
+         
         <div className='container'>
             <h1>Kirjaudu sisään</h1>
             <h4>Käyttäjänimi</h4>
@@ -56,7 +54,7 @@ export default function LogIn() {
             <div className="row">
                 <Link to="/register">Etkö ole vielä asiakas? Rekisteröidy tästä!</Link>
             </div>
->>>>>>> refs/remotes/origin/master
+
         </div>
     )
 }
