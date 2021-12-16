@@ -46,6 +46,7 @@ export default function Register () {
   return (
     <div className='container'>
       <form onSubmit={registerUser}>
+       <h2 className='registerTitle'>Rekisteröidy</h2>
         <div>
             <h5>Etunimi</h5>
           <input id='reg' value={fname} onChange={e => setFname(e.target.value)} />
