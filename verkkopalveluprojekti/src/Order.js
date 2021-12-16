@@ -32,6 +32,10 @@ export default function Order({url, cart, updateAmount, removeFromCart, empty}) 
         setInputIndex(index);
     }
 
+    useEffect(() => {
+        console.log(cart);
+    })
+
     function order(e) {
         e.preventDefault();
         fetch(url + 'order/add.php' , {
