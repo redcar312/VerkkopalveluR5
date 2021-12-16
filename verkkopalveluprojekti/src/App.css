@@ -48,6 +48,11 @@ img {
   border-bottom: 1px solid #161B27;
 }
 
+.logo {
+  max-height: 10%;
+  max-width: 10%;
+}
+
 .homeImage {
   max-width: 80%;
   max-height: 80%;
@@ -91,6 +96,10 @@ img {
   margin-bottom: 0.2rem;
 }
 
+.logInButton {
+  align-content: center;
+}
+
 .productLink {
   text-decoration: none;
   color: white;
@@ -98,6 +107,15 @@ img {
 
 .productLink:hover {
   color: lightblue;
+}
+
+.carousel img {
+  height: 500px;
+  width: 100%;
+}
+
+.carouselAlign {
+  align-items: center;
 }
 
 /* Numeroinputin nuolet pois */

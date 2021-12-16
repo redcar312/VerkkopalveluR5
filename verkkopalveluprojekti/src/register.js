@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import './register.css'
 
 export default function Register () {
   const [fname, setFname] = useState('')
@@ -29,41 +30,30 @@ export default function Register () {
     .then (res=> {
       return res.json
     }). catch(error => alert(error))
-
-    
-
-   
   }
 
-  
-    
-  
-      
-  
-    
-
-
   return (
-    <div>
+    <div className="container">
+      <h2 className="registerTitle">Rekisteröidy</h2>
       <form onSubmit={registerUser}>
         <div>
-            <label>Etunimi</label>
-          <input value={fname} onChange={e => setFname(e.target.value)} />
+            <h5>Etunimi</h5>
+          <input id='reg' value={fname} onChange={e => setFname(e.target.value)} />
         </div>
         <div>
-            <label>Sukunimi</label>
-          <input value={lname} onChange={e => setLname(e.target.value)} />
+            <h5>Sukunimi</h5>
+          <input id='reg' value={lname} onChange={e => setLname(e.target.value)} />
         </div>
         <div>
-          <label>Käyttäjänimi</label>
-          <input value={uname} onChange={e => setUname(e.target.value)} />
+          <h5>Käyttäjänimi</h5>
+          <input id="reg" value={uname} onChange={e => setUname(e.target.value)} />
         </div>
         <div>
-            <label>Salasana</label>
-          <input value={passwd} onChange={e => setPasswd(e.target.value)} />
+            <h5>Salasana</h5>
+          <input id="reg" value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
-           <button>Rekisteröidy</button>
+           <button type='button' className="btn btn-warning block">Rekisteröidy</button>
        </div>
       </form>
     </div>

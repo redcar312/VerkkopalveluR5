@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import image1 from './img/black.png'
 import './App.css'
+import Carousel from './Carousel'
 
-export default function Home({ url, category,addToCart }) {
+export default function Home({ url, category, product, addToCart }) {
   const [products, setProducts] = useState([]);
+  const [carousel, setCarousel] = useState([]);
 
   useEffect(() => {
     if (category !== null) {
@@ -72,67 +73,9 @@ export default function Home({ url, category,addToCart }) {
               </div>
             ))}
           </div>
-        <h3>Alennustuotteita ja tarjouksia:</h3>
-        <div className="col-12">
-          <div
-            id='carouselExampleControls'
-            className='carousel slide col-12'
-            data-bs-ride='carousel'
-          >
-            <div className='carousel-inner'>
-              <div className='carousel-item active'>
-                <img
-                  src={image1}
-                  height='500px'
-                  width='500px'
-                  className='d-block w-100 img-responsive'
-                  alt='...'
-                />
-              </div>
-              <div className='carousel-item'>
-                <img
-                  src={image1}
-                  height='500px'
-                  width='500px'
-                  className='d-block w-100 img-responsive'
-                  alt='...'
-                />
-              </div>
-              <div className='carousel-item'>
-                <img
-                  src={image1}
-                  height='500px'
-                  width='500px'
-                  className='d-block w-100 img-responsive'
-                  alt='...'
-                />
-              </div>
-            </div>
-            <button
-              className='carousel-control-prev'
-              type='button'
-              data-bs-target='#carouselExampleControls'
-              data-bs-slide='prev'
-            >
-              <span
-                className='carousel-control-prev-icon'
-                aria-hidden='true'
-              ></span>
-              <span className='visually-hidden'>Previous</span>
-            </button>
-            <button
-              className='carousel-control-next'
-              type='button'
-              data-bs-target='#carouselExampleControls'
-              data-bs-slide='next'
-            >
-              <span
-                className='carousel-control-next-icon'
-                aria-hidden='true'
-              ></span>
-              <span className='visually-hidden'>Next</span>
-            </button>
-          </div>
+        <h3>Suosittuja tuotteita:</h3>
+        <div className="carouselAlign">
+          <Carousel url={url} product={product} />
         </div>
       </div>
     </div>

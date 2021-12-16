@@ -11,8 +11,8 @@ import React from 'react';
 import Product from './Product';
 import Order from './Order';
 import Search from './Search';
-
 import register from './register';
+
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
     if (location.state !== undefined) {
       if (location.pathname==="/") {
       setCategory({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image});
+      setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image, info:location.state.info});
     } else if (location.pathname ==="/product") {
       setProduct({id: location.state.id, name:location.state.name, price:location.state.price, image:location.state.image, info:location.state.info});
     } else if (location.pathname === "/search") {
@@ -86,6 +87,7 @@ function App() {
             url = {URL}
             category = {category}
             addToCart={addToCart}
+            product={product}
           />}
           exact
         />
