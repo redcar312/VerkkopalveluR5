@@ -96,6 +96,10 @@ img {
   margin-bottom: 0.2rem;
 }
 
+.logInButton {
+  align-content: center;
+}
+
 .productLink {
   text-decoration: none;
   color: white;
@@ -103,6 +107,15 @@ img {
 
 .productLink:hover {
   color: lightblue;
+}
+
+.carousel img {
+  height: 500px;
+  width: 100%;
+}
+
+.carouselAlign {
+  align-items: center;
 }
 
 /* Numeroinputin nuolet pois */

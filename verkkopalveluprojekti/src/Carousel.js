@@ -19,60 +19,22 @@ export default function Carousel({url, product}) {
           }
         })
       }, [product])
-    
+
     return (
-        <div className="col-12">
-          <div
-            id='carouselExampleControls'
-            className='carousel slide col-12'
-            data-bs-ride='carousel'
-          >
-              <div className='carousel-inner'>
-              <div className='carousel-item active'>
-                <img
-                  src={image1}
-                  height='500px'
-                  width='250px'
-                  className='d-block w-100 img-responsive'
-                  alt='...'
-                />
-              </div>
-              {carousel.map(card => (
-                <div key={card.id} className='carousel-item'>
-                    <img className="d-block w-100 img-responsive"
-                        height='500px'
-                        width='250px'
-                        src={url + 'img/' + card.image} 
-                        alt="..." />
-                    <p>{card.name}, {card.price} €</p>
-                </div>
-              ))}
-              </div>
-            <button
-              className='carousel-control-prev'
-              type='button'
-              data-bs-target='#carouselExampleControls'
-              data-bs-slide='prev'
-            >
-              <span
-                className='carousel-control-prev-icon'
-                aria-hidden='true'
-              ></span>
-              <span className='visually-hidden'>Previous</span>
-            </button>
-            <button
-              className='carousel-control-next'
-              type='button'
-              data-bs-target='#carouselExampleControls'
-              data-bs-slide='next'
-            >
-              <span
-                className='carousel-control-next-icon'
-                aria-hidden='true'
-              ></span>
-              <span className='visually-hidden'>Next</span>
-            </button>
+      <div>
+        <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={image1} className="d-block img-fluid" alt="..." />
           </div>
+          {carousel.map(item => (
+            <div key={item.id} className="carousel-item">
+              <img className="d-block img-fluid" src={url + 'img/' + item.image} />
+              <p>{item.name}, {item.price} €</p>
+            </div>
+          ))}
         </div>
+      </div>
+    </div>
     )
 }
