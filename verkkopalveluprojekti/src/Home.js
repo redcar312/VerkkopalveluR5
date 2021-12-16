@@ -25,6 +25,13 @@ export default function Home({ url, category,addToCart }) {
     }
   }, [category])
 
+  useEffect(() => {
+    axios.get(url + 'products/carouselProducts.php'
+    ).then((response) => {
+
+    })
+  })
+
   return (
     <div className='container'>
       <div className='col-12'>
