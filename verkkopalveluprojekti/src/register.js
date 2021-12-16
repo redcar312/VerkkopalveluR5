@@ -3,7 +3,6 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './register.css'
-
 export default function Register () {
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
@@ -30,11 +29,22 @@ export default function Register () {
     .then (res=> {
       return res.json
     }). catch(error => alert(error))
+
+    
+
+   
   }
 
+  
+    
+  
+      
+  
+    
+
+
   return (
-    <div className="container">
-      <h2 className="registerTitle">Rekisteröidy</h2>
+    <div className='container'>
       <form onSubmit={registerUser}>
         <div>
             <h5>Etunimi</h5>
@@ -53,7 +63,7 @@ export default function Register () {
           <input className='reg' value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
-           <button type='button' className="btn btn-warning block">Rekisteröidy</button>
+           <button className='btn btn-warning block'>Rekisteröidy</button>
        </div>
       </form>
     </div>
