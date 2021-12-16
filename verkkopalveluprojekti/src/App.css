@@ -48,6 +48,11 @@ img {
   border-bottom: 1px solid #161B27;
 }
 
+.logo {
+  max-height: 10%;
+  max-width: 10%;
+}
+
 .homeImage {
   max-width: 80%;
   max-height: 80%;
