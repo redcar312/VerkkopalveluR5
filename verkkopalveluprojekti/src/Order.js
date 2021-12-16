@@ -4,7 +4,7 @@ import './Order.css'
 import {createRef, setInputIndex} from 'react';
 import uuid from 'react-uuid'
 
-export default function Order({url, cart, updateAmount, removeFromCart, emptyCart}) {
+export default function Order({url, cart, updateAmount, removeFromCart, empty}) {
     const [inputs, setInputs] = useState([]);
     const [inputIndex, setInputIndex] = useState(-1);
     let sumAll = 0;
@@ -32,11 +32,6 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
         setInputIndex(index);
     }
 
-    function productSum(price, amount) {
-        let sum = price * amount;
-        return sum.toFixed(2);
-    }
-
     function order(e) {
         e.preventDefault();
         fetch(url + 'order/add.php' , {
@@ -59,8 +54,8 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
         })
         .then (
             (res) => {
+                empty();
                 setFinished(true);
-                emptyCart();
             }, (error) => {
                 alert(error);
             }
@@ -92,7 +87,7 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
                                         />
                                     </td>
                                     <td> = </td>
-                                    <td>{productSum(product.price, product.amount)} €</td>
+                                    <td>{product.price * product.amount} €</td>
                                     <td><button className="btn btn-warning" onClick={() => removeFromCart(product)}>Poista</button></td>
                                 </tr>
                                 )
@@ -107,7 +102,7 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
                         <td className="sumrow"></td>
                         <td className="sumrow">Yhteensä: </td>
                         <td className="sumrow">{sumAll.toFixed(2)} €</td>
-                        <td className="sumrow"><button className="btn btn-danger" onClick={() => emptyCart()}>Tyhjennä ostoskori</button></td>
+                        <td className="sumrow"><button className="btn btn-danger" onClick={() => empty()}>Tyhjennä ostoskori</button></td>
                     </tr>
                     </tbody>
                     </table>    
@@ -143,7 +138,13 @@ export default function Order({url, cart, updateAmount, removeFromCart, emptyCar
                         </div>
                     </form>
                     </>
-                }
+                } 
+            </div>
+        )
+    } else {
+        return (
+            <div className="container">
+                <h3>Kiitos tilauksestasi!</h3>
             </div>
         )
     }

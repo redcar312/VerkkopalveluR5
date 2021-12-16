@@ -93,7 +93,7 @@ function App() {
             <Order 
               url={URL}
               cart={cart}   
-              emptyCart = {emptyCart}  
+              empty = {emptyCart}  
               updateAmount = {updateAmount}
               removeFromCart = {removeFromCart}
             />
