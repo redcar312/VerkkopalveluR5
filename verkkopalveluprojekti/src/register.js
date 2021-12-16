@@ -3,27 +3,49 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export default function Register (url) {
+export default function Register () {
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
   const [uname, setUname] = useState('')
   const [passwd, setPasswd] = useState('')
+  const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/register/register.php"
+ 
   
-  const post = e =>{
+  function registerUser (e){
       e.preventDefault();
-      axios.post("http://localhost/verkkopalveluprojekti_ryhma_5/register/register.php",{
-     
+     fetch(URL,{
+      method:'POST',
+      headers: { 
+        'Content-Type' : 'application/json',
+        
+      },
+    body: JSON.stringify({
       fname: fname,
-       lname: lname,
-       uname: uname,
-       passwd: passwd,
+      lname: lname,
+      uname: uname,
+      passwd: passwd,
+    })
+     })
+    .then (res=> {
+      return res.json
+    }). catch(error => alert(error))
+
+    
+
    
-      })
   }
+
+  
+    
+  
+      
+  
+    
+
 
   return (
     <div>
-      <form>
+      <form onSubmit={registerUser}>
         <div>
             <label>Etunimi</label>
           <input value={fname} onChange={e => setFname(e.target.value)} />
@@ -41,7 +63,7 @@ export default function Register (url) {
           <input value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
-           <button onClick={post}>Rekisteröidy</button>
+           <button>Rekisteröidy</button>
        </div>
       </form>
     </div>
