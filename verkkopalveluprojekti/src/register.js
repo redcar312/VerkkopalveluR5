@@ -46,21 +46,22 @@ export default function Register () {
   return (
     <div className='container'>
       <form onSubmit={registerUser}>
+       <h2 className='registerTitle'>Rekisteröidy</h2>
         <div>
             <h5>Etunimi</h5>
-          <input className='reg' value={fname} onChange={e => setFname(e.target.value)} />
+          <input id='reg' value={fname} onChange={e => setFname(e.target.value)} />
         </div>
         <div>
             <h5>Sukunimi</h5>
-          <input className='reg' value={lname} onChange={e => setLname(e.target.value)} />
+          <input id='reg' value={lname} onChange={e => setLname(e.target.value)} />
         </div>
         <div>
           <h5>Käyttäjänimi</h5>
-          <input className='reg' value={uname} onChange={e => setUname(e.target.value)} />
+          <input id='reg' value={uname} onChange={e => setUname(e.target.value)} />
         </div>
         <div>
             <h5>Salasana</h5>
-          <input className='reg' value={passwd} onChange={e => setPasswd(e.target.value)} />
+          <input id='reg' value={passwd} onChange={e => setPasswd(e.target.value)} />
         </div>
        <div>
            <button className='btn btn-warning block'>Rekisteröidy</button>
