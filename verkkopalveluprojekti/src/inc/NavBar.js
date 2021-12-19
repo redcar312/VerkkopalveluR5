@@ -85,8 +85,12 @@ export default function NavBar({url,cart,setCategory}) {
                 Kirjaudu sisään
              
              </Link>
-             <Link className='nav-link' to='/register'>
-               Rekisteröidy </Link>
+              <Link className='nav-link' to='/register'>
+               Rekisteröidy 
+              </Link>
+              <Link className='nav-link' to="/admin">
+                  Ylläpitoon
+              </Link>
             <ul className="navbar-nav">
               <li className="nav-item ms-auto">
                 <Cart cart={cart} />

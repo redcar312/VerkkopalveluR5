@@ -2,27 +2,28 @@ import React from 'react'
 import './LogIn.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios';
 export default function LogIn () {
   const URL = 'http://localhost/verkkopalveluprojekti_ryhma_5/login/login.php'
   const [username, setUsername] = useState('')
   const [passwd, setPasswd] = useState('')
 
-  function checkUser (e) {
-    e.preventDefault()
-    fetch(URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: username,
-        passwd: passwd
-      })
-    })
-      .then(res => {
-        return res.json
-      })
-      .catch(error => alert(error))
+  const base64cred = btoa(username+':'+passwd)
+
+  let params = {
+    method: 'POST',
+    headers: {
+      Authorization: 'Basic' + base64cred
+    },
+    withCredentials:true
+  }
+  
+  function checkUser(e) {
+    e.preventDefault();
+    axios.post(URL, params
+      ).then(res => res.text)
+      .then(t => console.log(t))
+      .catch(error => console.log(error));
   }
 
   return (

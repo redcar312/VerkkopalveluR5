@@ -119,6 +119,10 @@ img {
   align-items: center;
 }
 
+.adminForm {
+  margin-bottom: 4rem;
+}
+
 /* Numeroinputin nuolet pois */
 
 /* Chrome, Safari, Edge, Opera */

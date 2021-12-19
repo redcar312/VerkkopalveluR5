@@ -12,6 +12,7 @@ import Product from './Product';
 import Order from './Order';
 import Search from './Search';
 import register from './register';
+import Admin from './Admin';
 
 const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/";
 
@@ -115,6 +116,11 @@ function App() {
             />
           }
         />
+        <Route path="/admin" render={() => 
+          <Admin
+            url={URL}
+          />
+        }/>
       </Switch>
     </div>
     <Footer />
