@@ -23,10 +23,6 @@ function App() {
 
   let location = useLocation();
 
-  useEffect(() => {
-    console.log(search)
-  })
-
   useEffect(()=> {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
