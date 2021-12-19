@@ -73,7 +73,7 @@ export default function Home({ url, category, product, addToCart }) {
               </div>
             ))}
           </div>
-        <h3>Suosittuja tuotteita:</h3>
+        <h3>Saatat pitää näistä tuotteista:</h3>
         <div className="carouselAlign">
           <Carousel url={url} product={product} />
         </div>
