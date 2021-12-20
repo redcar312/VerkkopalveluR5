@@ -6,7 +6,7 @@ export default function Admin({url}) {
     const [categories, setCategories] = useState([])
     const [option, setOption] = useState('');
     const [categoryName, setCategoryName] = useState('');
-
+    
     useEffect(() => {
         axios.get(url + 'products/categories.php')
           .then((response)=> {

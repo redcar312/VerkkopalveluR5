@@ -3,11 +3,13 @@ import './App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './register.css'
+import { Redirect } from "react-router-dom"
 export default function Register () {
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
   const [uname, setUname] = useState('')
   const [passwd, setPasswd] = useState('')
+ const [done, setDone] = useState(false);
   const URL = "http://localhost/verkkopalveluprojekti_ryhma_5/register/register.php"
  
   
@@ -17,7 +19,7 @@ export default function Register () {
       method:'POST',
       headers: { 
         'Content-Type' : 'application/json',
-        
+        'Access-Control-Origin': '*'
       },
     body: JSON.stringify({
       fname: fname,
@@ -28,35 +30,96 @@ export default function Register () {
      })
     .then (res=> {
       return res.json
-    }). catch(error => alert(error))
+    }). then((res) =>{
+      setDone(true);
+    }, (error) => alert(error))
+    
+
+   
   }
 
-  return (
-    <div className='container'>
-      <div className="form-group">
-      <form onSubmit={registerUser}>
-       <h2 className='registerTitle'>Rekisteröidy</h2>
-        <div>
-            <h5>Etunimi</h5>
-          <input className="form-control" id='reg' value={fname} onChange={e => setFname(e.target.value)} />
-        </div>
-        <div>
-            <h5>Sukunimi</h5>
-          <input className="form-control" id='reg' value={lname} onChange={e => setLname(e.target.value)} />
-        </div>
-        <div>
-          <h5>Käyttäjänimi</h5>
-          <input className="form-control" id='reg' value={uname} onChange={e => setUname(e.target.value)} />
-        </div>
-        <div>
-            <h5>Salasana</h5>
-          <input className="form-control" id='reg' value={passwd} onChange={e => setPasswd(e.target.value)} />
-        </div>
-       <div>
-           <button className='btn btn-warning block'>Rekisteröidy</button>
-       </div>
-      </form>
+  
+    
+  
+      
+  if(done === false){
+    return(
+
+  <div className='container'>
+        <form onSubmit={registerUser}>
+          <div className='row'>
+            <div className='col-sm-7 offset-3 mt-5'>
+              <div className='card border-dark'>
+                <div className='card-header bg-dark text-warning registertitle' > Rekisteröidy</div>
+                <div className='card-body bg-secondary'>
+                  
+                  <div className='input-group mb-4 mt-4'>
+                    <div className='input-group-prepend'></div>
+                   
+                    <input
+                      type='text'
+                      className='form-control'
+                      placeholder='Etunimi'
+                      aria-label='Etunimi'
+                      aria-describedby='basic-addon1'
+                      id='fn'
+                      value={fname} onChange={e => setFname(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className='input-group mb-4 mt-4'>
+                    <div className='input-group-prepend'>
+                      
+                    </div>
+                    <input
+                      type='text'
+                      className='form-control'
+                      placeholder='Sukunimi'
+                      aria-label='Sukunimi'
+                      aria-describedby='basic-addon1'
+                      value={lname} onChange={e => setLname(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className='input-group mb-4 mt-4'>
+                    <div className='input-group-prepend'>
+                    
+                    </div>
+                    <input
+                      type='text'
+                      className='form-control'
+                      placeholder='Käyttäjätunnus'
+                      aria-label='Username'
+                      aria-describedby='basic-addon1'
+                      value={uname} onChange={e => setUname(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className='input-group mb-4 mt-4'>
+                    <div className='input-group-prepend'>
+                      
+                    </div>
+                    <input
+                      type='password'
+                      className='form-control'
+                      placeholder='Salasana'
+                      aria-label='password'
+                      aria-describedby='basic-addon1'
+                      value={passwd} onChange={e => setPasswd(e.target.value)}
+                    
+                    />
+                  </div>
+                <button className='btn btn-warning btn-outline-dark btn-lg '>Rekisteröidy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
-  )
+    )}
+    else{
+      return(
+        <h2 className='registertittle'>Rekisteröityminen onnistui</h2>
+      )
+    }
 }
