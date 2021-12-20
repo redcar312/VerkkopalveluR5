@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import image1 from "./img/black.png";
+import image2 from './img/VoimaCarousel.png';
 
 export default function Carousel({url, product}) {
     const [carousel, setCarousel] = useState([]);
@@ -25,7 +26,7 @@ export default function Carousel({url, product}) {
         <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={image1} className="d-block img-fluid" alt="..." />
+            <img src={image2} className="d-block img-fluid" alt="..." />
           </div>
           {carousel.map(item => (
             <div key={item.id} className="carousel-item">
