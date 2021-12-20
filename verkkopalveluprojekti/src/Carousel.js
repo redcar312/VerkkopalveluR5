@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import image1 from "./img/black.png";
 import image2 from './img/VoimaCarousel.png';
 
 export default function Carousel({url, product}) {
