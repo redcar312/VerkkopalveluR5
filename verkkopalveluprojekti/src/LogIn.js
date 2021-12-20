@@ -63,7 +63,7 @@ export default function LogIn () {
                   />
                 </div>
                 <div className='text-dark'>
-                  <Link to='/register'>
+                  <Link className="productLink" to='/register'>
                     Etkö ole vielä asiakas? Rekisteröidy tästä!
                   </Link>
                 </div>
